@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
 body {
+  margin: 0;
+  padding: 0;
   background: #f2f2f2;
   color: #333;
   font-family: "Nunito";
@@ -21,9 +23,7 @@ nav {
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
 }
-nav a:last-child {
-  margin-left: 16px;
-}
+
 nav .logo {
   margin-right: auto;
 }
@@ -45,3 +45,12 @@ footer {
   color: #4979ff;
   text-decoration: underline;
 } 
+
+
+/* Market Table */
+table tbody tr:nth-child(even){
+  background-color: white;
+}
+table td, th{
+  padding: 16px ;
+}

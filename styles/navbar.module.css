@@ -1,0 +1,19 @@
+.btn {
+    padding: 16px 32px;
+    cursor: pointer;
+    border-style: none;
+    background-color: inherit;
+  }
+
+
+  .spinner{
+    position: fixed;
+    border-radius: 100%;
+    top: 50%;   
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+  }

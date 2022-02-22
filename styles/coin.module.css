@@ -1,0 +1,34 @@
+.item {
+    padding: 2px 16px;
+    background: #fff;
+    display: block;
+    margin: 20px 10px;
+    border-left: 8px solid #fff;
+  }
+  .item:hover {
+    border-left: 8px solid goldenrod;
+  }
+
+  .itemBody{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .itemContent{
+    width:85%;
+   
+  }
+  .itemHeading{
+    display: inline-block;
+  }
+
+  .hideCoin{
+    border-style: none;
+    padding: 8px 16px;
+    background-color: goldenrod;
+    color: #fff;
+    cursor: pointer;
+    align-self: center;
+    border-radius: 5px;
+
+  }

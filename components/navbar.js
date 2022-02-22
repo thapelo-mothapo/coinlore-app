@@ -1,16 +1,67 @@
 import Link from "next/link"
+import { useEffect, useState } from "react";
+import styles from '../styles/navbar.module.css'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { TailSpin } from  'react-loader-spinner'
 
 export default function Nav(){
-  return(
-    <nav>
-      <div className="logo">
-        <h1>WeCoin</h1>
-      </div>
-      <Link href="/"><a>coins</a></Link>
-      <Link href="/hidden-coins"><a>hidden</a></Link>
 
-    </nav>
-  )
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = () =>{
+
+    setLoading(true);
+    localStorage.clear(); 
+    location.reload(); 
+  }
+
+  useEffect(()=>{
+    if(loading){
+
+      if(localStorage.length > 1){
+        let timeoutId = setTimeout(()=>{
+          setLoading(false);
+        }, 3000);
+
+        return()=>{
+          clearTimeout(timeoutId);
+        }
+      }
+   
+
+    }
+
+  },[loading]);
+
+  return(
+    <>
+
+      {loading	&& 
+        <div className={styles.spinner}>
+          <TailSpin color="#00BFFF" height={100} width={100} />
+        </div>
+      }
+      <nav>
+        <div className="logo">
+
+          <Link href='/'>
+            <a><h1>WeCoin</h1></a>
+            
+          </Link>
+          <Link href="/coins"><a>Home</a></Link>
+          
+        </div>
+        
+        <button className={styles.btn} 
+        onClick={handleClick}
+        title="Unhide all"
+        >
+          <img src="https://img.icons8.com/ios-glyphs/24/000000/visible--v2.png"/>
+        </button>
+      </nav>
+    </>
+    )
+ 
 }
 
 
