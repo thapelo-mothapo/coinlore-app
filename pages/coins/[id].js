@@ -30,6 +30,7 @@ export default function CoinMarket({markets}){
 
 
 
+
     return(
         <>
             <h1>{markets[0].base} Market</h1>
@@ -42,7 +43,7 @@ export default function CoinMarket({markets}){
                         <th>Quote</th>
                         <th>Price</th>
                         <th>Volume</th>
-                        <th>Time</th>
+         
                     </tr>
                 </thead>
             
@@ -54,7 +55,7 @@ export default function CoinMarket({markets}){
                             <td>{market.quote}</td>
                             <td>{currencyFormat.format( market.price)}</td>
                             <td>{Math.round(market.volume * 100) / 100 }</td>
-                            <td>{market.time}</td>
+                   
                         </tr>
                     )}
                 </tbody>
