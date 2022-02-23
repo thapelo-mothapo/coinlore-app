@@ -7,11 +7,14 @@ import { TailSpin } from  'react-loader-spinner'
 export default function Nav(){
 
   const [loading, setLoading] = useState(false);
+  const [numHidden, setNumHidden] = useState(0);
 
   const handleClick = () =>{
 
     setLoading(true);
+    
     localStorage.clear(); 
+    // setNumHidden(0);
     location.reload(); 
   }
 
@@ -32,6 +35,10 @@ export default function Nav(){
     }
 
   },[loading]);
+
+  useEffect(()=>{
+    setNumHidden(localStorage.length)
+  },[])
 
   return(
     <>
@@ -58,6 +65,7 @@ export default function Nav(){
         title="Unhide all"
         >
           <img src="https://img.icons8.com/ios-glyphs/24/000000/visible--v2.png"/>
+          {numHidden && numHidden -1}
         </button>
       </nav>
     </>

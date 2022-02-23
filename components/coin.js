@@ -8,19 +8,22 @@ export default function Coin({coin}){
 
   const [coinHidden, setCoinHidden] = useState(false);
   const [coinId, setCoinId] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const handleHide = ({target}) =>{
+    setLoading(true);
     setCoinId(target.getAttribute('data-coin-id'));
     setCoinHidden(true);
+
+    location.reload();
   }
 
 
 
 
-  const [loading, setLoading] = useState(false);
+
 
   const handleClick = () =>{
-
     setLoading(true);
   }
 
