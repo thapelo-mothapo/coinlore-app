@@ -8,8 +8,6 @@ export default function Coin({coin}){
   const [coinId, setCoinId] = useState(0);
 
   const handleHide = ({target}) =>{
-    console.log(target.getAttribute('data-coin-id'));
-
     setCoinId(target.getAttribute('data-coin-id'));
     setCoinHidden(true);
   }
@@ -25,7 +23,6 @@ export default function Coin({coin}){
 
   useEffect(()=>{
     if(localStorage.getItem(coin.id) !== null) setCoinHidden(true);
-    else console.log("nope")
   },[])
   
   
