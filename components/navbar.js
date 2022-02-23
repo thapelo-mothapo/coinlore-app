@@ -21,7 +21,7 @@ export default function Nav(){
       if(localStorage.length > 1){
         let timeoutId = setTimeout(()=>{
           setLoading(false);
-        }, 3000);
+        }, 10000);
 
         return()=>{
           clearTimeout(timeoutId);

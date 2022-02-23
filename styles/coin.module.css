@@ -4,6 +4,7 @@
     display: block;
     margin: 20px 10px;
     border-left: 8px solid #fff;
+    transition: .5s;
   }
   .item:hover {
     border-left: 8px solid goldenrod;
@@ -30,6 +31,7 @@
     cursor: pointer;
     align-self: center;
     border-radius: 5px;
+    transition: .3s;
 
   }
 
