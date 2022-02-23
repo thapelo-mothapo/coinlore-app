@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Coin from '../../components/coin'
 
 export async function getServerSideProps(){
@@ -11,6 +12,11 @@ export async function getServerSideProps(){
 }
 
 export default function Coins({coins}){
+
+  useEffect(()=>{
+
+    document.querySelector('#hideCoins').hidden = false;
+  }, []);
 
   if(!coins)return<p>Loading...</p>
   return(

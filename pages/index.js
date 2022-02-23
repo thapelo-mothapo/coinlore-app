@@ -1,10 +1,16 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 
 
 export default function Home() {
+
+  useEffect(()=>{
+
+    document.querySelector('#hideCoins').hidden = true;
+  }, []);
   return (
     <>
       <Head>

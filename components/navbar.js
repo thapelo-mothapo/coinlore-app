@@ -53,7 +53,7 @@ export default function Nav(){
           
         </div>
         
-        <button className={styles.btn} 
+        <button id="hideCoins" className={styles.btn} 
         onClick={handleClick}
         title="Unhide all"
         >

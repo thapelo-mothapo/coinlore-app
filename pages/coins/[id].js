@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import styles from '../../styles/market.module.css';
 
 export async function getServerSideProps(context){
@@ -26,8 +28,10 @@ export default function CoinMarket({markets}){
         //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
     });
 
+    useEffect(()=>{
 
-
+        document.querySelector('#hideCoins').hidden = true;
+      }, []);
 
     return(
         <>
