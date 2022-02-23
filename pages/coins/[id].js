@@ -1,17 +1,29 @@
 import { useEffect } from 'react';
 
 import styles from '../../styles/market.module.css';
+import NotFound from '../404';
 
 export async function getServerSideProps(context){
 
-    const coinId = context.params.id
+    
 
-    const res = await fetch(`https://api.coinlore.net/api/coin/markets/?id=${coinId}`);
-    const data = await res.json();
 
-    return{
-      props: {markets: data}
+    try {
+        const coinId = context.params.id
+        const res = await fetch(`https://api.coinlore.net/api/coin/markets/?id=${coinId}`);
+        const data = await res.json();
+        return{
+            props: {markets: data}
+          }
+    } catch (error) {
+        return{
+            props:{markets: null}
+        }
     }
+
+
+
+
 }
 
 
@@ -33,10 +45,11 @@ export default function CoinMarket({markets}){
         document.querySelector('#hideCoins').hidden = true;
       }, []);
 
-    return(
-        <>
-            <h1>{markets[0].base} Market</h1>
+    if(markets === null) return <NotFound />
 
+    return(
+        <> 
+            <h1>{markets[0].base} Market</h1>
             <table className={styles.table}>
                 <thead className={styles.tableHeading}>
                     <tr className={styles.tableRow}>
@@ -63,8 +76,6 @@ export default function CoinMarket({markets}){
                 </tbody>
 
             </table>
-
-
         </>
     )
 }
