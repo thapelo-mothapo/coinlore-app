@@ -1,4 +1,6 @@
-# Coinlore API APP
+# Coinlore APP
+The please [see the deployed app](https://coinlore-app-git-main-thapelo-mothapo.vercel.app/).
+
 
 ## Getting Started
 
