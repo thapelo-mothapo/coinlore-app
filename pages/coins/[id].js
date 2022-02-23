@@ -7,8 +7,6 @@ export async function getServerSideProps(context){
     const res = await fetch(`https://api.coinlore.net/api/coin/markets/?id=${coinId}`);
     const data = await res.json();
 
-    console.log(data)
-
     return{
       props: {markets: data}
     }
