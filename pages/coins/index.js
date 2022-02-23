@@ -12,6 +12,7 @@ export async function getServerSideProps(){
 
 export default function Coins({coins}){
 
+  if(!coins)return<p>Loading...</p>
   return(
     <>
       <h1>All Coins</h1>

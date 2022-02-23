@@ -48,7 +48,8 @@ export default function Nav(){
             <a><h1>WeCoin</h1></a>
             
           </Link>
-          <Link href="/coins"><a>Home</a></Link>
+          <Link href="/"><a>Home</a></Link>
+          <Link href="/coins"><a>Coins</a></Link>
           
         </div>
         

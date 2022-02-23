@@ -23,6 +23,12 @@ nav {
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
 }
+nav a:last-child{
+  margin-left: 16px;
+}
+nav a:hover{
+  color: goldenrod;
+}
 
 nav .logo {
   margin-right: auto;

@@ -25,10 +25,14 @@
   .hideCoin{
     border-style: none;
     padding: 8px 16px;
-    background-color: goldenrod;
+    background-color: gray;
     color: #fff;
     cursor: pointer;
     align-self: center;
     border-radius: 5px;
 
+  }
+
+  .hideCoin:hover{
+    background-color: goldenrod;
   }
